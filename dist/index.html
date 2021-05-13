@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <title>Task List</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="waves">
+        <h1>Task List</h1>
+        <svg
+          width="100%"
+          id="svg"
+          viewBox="0 0 1250 1000"
+          xmlns="http://www.w3.org/2000/svg"
+          class="transition duration-300 ease-in-out delay-150"
+        >
+          <path
+            d="M 0,600 C 0,600 0,300 0,300 C 49.18035039505324,260.6472002748196 98.36070079010648,221.2944005496393 173,236 C 247.63929920989352,250.7055994503607 347.7375472346273,319.46959807626246 426,318 C 504.2624527653727,316.53040192373754 560.6891102713844,244.82720714531087 623,240 C 685.3108897286156,235.17279285468913 753.5060116798351,297.221573342494 822,305 C 890.4939883201649,312.778426657506 959.2868430092753,266.2864994847131 1023,241 C 1086.7131569907247,215.71350051528688 1145.3466162830641,211.6324287186534 1214,225 C 1282.6533837169359,238.3675712813466 1361.326691858468,269.1837856406733 1440,300 C 1440,300 1440,600 1440,600 Z"
+            stroke="none"
+            stroke-width="0"
+            fill="#041a49ff"
+            class="transition-all duration-300 ease-in-out delay-150"
+            transform="rotate(-180 720 300)"
+          ></path>
+        </svg>
+      </div>
+
+      <section class="card-content">
+        <div class="entry-task">
+          <input id="item-name-input" class="entry-task-input" type="text" placeholder="Enter task..." />
+          <button id="add-item-button" class="entry-task-add-button fas fa-plus-circle"></button>
+        </div>
+
+        <ul id="shopping-list-items" class="list-items"></ul>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

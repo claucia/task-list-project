@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #8cadfb;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding-top: 15px;
+}
+
+body .card {
+  display: block;
+  width: 480px;
+  margin: 48px 16px;
+  background-color: #2d4894;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+body .card .waves {
+  position: relative;
+  height: 135px;
+}
+
+body .card .waves svg {
+  border-radius: 20px 20px 0px 0px;
+}
+
+body .card .waves h1 {
+  position: absolute;
+  margin: 50px 170px 0;
+  font-size: 32px;
+  color: #8cadfb;
+}
+
+body .card .card-header,
+body .card .card-content {
+  padding: 32px;
+}
+
+body .card .entry-task {
+  position: relative;
+}
+
+body .card .entry-task .entry-task-input {
+  font-size: 16px;
+  color: #041a49;
+  background-color: #8cadfb;
+  border: 1px solid #2d4894;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 6px;
+  width: 97.5%;
+}
+
+body .card .entry-task .entry-task-input::-webkit-input-placeholder {
+  color: #041a49;
+}
+
+body .card .entry-task .entry-task-input:-ms-input-placeholder {
+  color: #041a49;
+}
+
+body .card .entry-task .entry-task-input::-ms-input-placeholder {
+  color: #041a49;
+}
+
+body .card .entry-task .entry-task-input::placeholder {
+  color: #041a49;
+}
+
+body .card .entry-task .entry-task-add-button {
+  border-radius: 50%;
+  color: #041a49;
+  font-size: 20px;
+  right: 10px;
+  top: 13px;
+}
+
+body .card .entry-task .entry-task-add-button, body .card .list-items .item-wrapper .delete-button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 4px;
+  border: none;
+}
+
+body .card .entry-task .entry-task-add-button:hover, body .card .list-items .item-wrapper .delete-button:hover {
+  color: #ff4eb8;
+}
+
+body .card .list-items .item-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 4fr 1fr;
+      grid-template-columns: 4fr 1fr;
+  padding: 10px;
+  margin: 6px;
+  border: 1px solid #041a49;
+  border-radius: 10px;
+  color: #8cadfb;
+  background-color: #041a49;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+  list-style-type: none;
+  position: relative;
+}
+
+body .card .list-items .item-wrapper .items {
+  font-size: 14px;
+}
+
+body .card .list-items .item-wrapper .delete-button {
+  font-size: 16px;
+  right: 6px;
+  top: 8px;
+  color: #8cadfb;
+}
+/*# sourceMappingURL=main.css.map */

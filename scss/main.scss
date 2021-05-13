@@ -1,0 +1,122 @@
+@import "variables";
+@import "functions";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $tertiary-color;
+  font-family: $font-stack;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding-top: 15px;
+
+  .card {
+    display: block;
+    width: 480px;
+    margin: 48px 16px;
+    background-color: $primary-color;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px 0 rgba($color: #000000, $alpha: 0.5);
+
+    .waves {
+      position: relative;
+      height: 135px;
+
+      svg {
+        border-radius: 20px 20px 0px 0px;
+      }
+
+      h1 {
+        position: absolute;
+        margin: 50px 170px 0;
+        font-size: 32px;
+        color: $tertiary-color;
+      }
+    }
+
+    .card-header,
+    .card-content {
+      padding: 32px;
+    }
+
+    .entry-task {
+      position: relative;
+
+      .entry-task-input {
+        font-size: 16px;
+        color: set-text-color($tertiary-color);
+        background-color: $tertiary-color;
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 6px;
+        width: 97.5%;
+
+        &::placeholder {
+          color: $secondary-color;
+        }
+      }
+
+      .entry-task-add-button {
+        @extend %btn-shared;
+
+        border-radius: 50%;
+        color: $secondary-color;
+        font-size: 20px;
+        right: 10px;
+        top: 13px;
+      }
+    }
+
+    %btn-shared {
+      position: absolute;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      padding: 4px;
+      border: none;
+
+      &:hover {
+        color: lighten($color: #e7008a, $amount: 20);
+      }
+    }
+
+    .list-items {
+      .item-wrapper {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 4fr 1fr;
+        padding: 10px;
+        margin: 6px;
+        border: 1px solid $secondary-color;
+        border-radius: 10px;
+        color: set-text-color($secondary-color);
+        background-color: $secondary-color;
+        box-shadow: 0 1px 1px 0 rgba($color: #000000, $alpha: 0.5);
+        list-style-type: none;
+        position: relative;
+
+        .items {
+          font-size: 14px;
+        }
+
+        .delete-button {
+          @extend %btn-shared;
+
+          font-size: 16px;
+          right: 6px;
+          top: 8px;
+          color: $tertiary-color;
+        }
+      }
+    }
+  }
+}
