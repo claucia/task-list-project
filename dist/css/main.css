@@ -62,18 +62,37 @@ body {
       body .card .entry-task .entry-task-add-button:hover, body .card .list-items .item-wrapper .delete-button:hover {
         color: #ff4eb8; }
     body .card .list-items .item-wrapper {
-      display: grid;
+      display: flex;
       align-items: center;
-      grid-template-columns: 4fr 1fr;
       padding: 10px;
       margin: 6px;
       border: 1px solid #041a49;
       border-radius: 10px;
       color: #8cadfb;
       background-color: #041a49;
-      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 1px 1px 0 rgba(4, 26, 73, 0.5);
       list-style-type: none;
       position: relative; }
+      body .card .list-items .item-wrapper .checkbox {
+        -webkit-appearance: none;
+        background-color: #041a49;
+        border: 1px solid #8cadfb;
+        padding: 8px;
+        margin-right: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        cursor: pointer; }
+        body .card .list-items .item-wrapper .checkbox:checked {
+          background-color: #041a49;
+          border: 1px solid #e7008a; }
+        body .card .list-items .item-wrapper .checkbox:checked:after {
+          content: "\2714";
+          font-size: 14px;
+          position: absolute;
+          top: 0px;
+          left: 2px;
+          color: #e7008a; }
       body .card .list-items .item-wrapper .items {
         font-size: 14px; }
       body .card .list-items .item-wrapper .delete-button {

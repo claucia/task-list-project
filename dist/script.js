@@ -27,10 +27,11 @@ function addItemFromInputValue() {
 // Add Item to the DOM
 function addItem(itemName) {
   const wrapper = createDivWrapper(itemName);
+  const checkbox = createCheckbox();
+  const divItem = createListItem(itemName);
   const button = createDeleteButton();
-  const li = createListItem(itemName);
 
-  wrapper.append(li, button);
+  wrapper.append(checkbox, divItem, button);
   shoppingListItems.append(wrapper);
 }
 
@@ -42,12 +43,21 @@ function createDivWrapper(itemName) {
   return div;
 }
 
-// Create li item
+// Create checkbox
+function createCheckbox() {
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "checkbox";
+  checkbox.addEventListener("change", completeTask);
+  return checkbox;
+}
+
+// Create div item
 function createListItem(content) {
-  const li = document.createElement("li");
-  li.className = "items";
-  li.appendChild(document.createTextNode(content));
-  return li;
+  const div = document.createElement("div");
+  div.className = "items";
+  div.appendChild(document.createTextNode(content));
+  return div;
 }
 
 // Create delete button
@@ -72,7 +82,20 @@ function addItemAfterKeypress(event) {
   }
 }
 
-// Delete item after click button Del
+// Check box after change
+function completeTask(event) {
+  const checkbox = event.target;
+  const li = event.target.nextElementSibling;
+
+  if (checkbox.checked) {
+    console.log("checked");
+    li.style = "text-decoration: line-through; text-decoration-color: #e7008a";
+  } else {
+    li.style = "text-decoration: none";
+  }
+}
+
+// Delete item after click delete button
 function deleteItem(event) {
   event.target.parentElement.remove();
   removeItemFromLocalStorage(event.target.parentElement.dataset.item);
@@ -80,7 +103,7 @@ function deleteItem(event) {
   //In this case dataset.item stores item name so it can be easily retrieved when deleting
 }
 
-// Obtain items from the localStorage
+// Obtain items from the Local Storage
 function readItemsFromLocalStorage() {
   let items = localStorage.getItem(itemsLocalStorageKey);
   if (items === null) {
@@ -91,6 +114,7 @@ function readItemsFromLocalStorage() {
   }
 }
 
+// Write Items to Local Storage
 function writeItemsToLocalStorage(items) {
   //It has to be store as a string so wrap "items" into JSON.stringify
   localStorage.setItem(itemsLocalStorageKey, JSON.stringify(items));
